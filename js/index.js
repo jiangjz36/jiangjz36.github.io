@@ -76,7 +76,7 @@ function getCountdown(countdown) {
     return arr;
 }
 setInterval(function() {
-    var aa = getCountdown('5 20,2017 00:00:00');
+    var aa = getCountdown('10 27,2017 00:00:00');
     $("#hour_1").html(aa[1]);
     $("#hour_2").html(aa[2]);
     $("#minute_1").html(aa[3]);
@@ -215,29 +215,29 @@ setInterval(function() {
 
 // 小倒计时
 setInterval(function() {
-    var t1 = getCountdown('5 20,2017 00:00:00');
+    var t1 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_1').html(t1[0]+'天'+t1[1]+t1[2]+'小时'+t1[3]+t1[4]+'分'+t1[5]+t1[6]+'秒');
-    var t2 = getCountdown('5 25,2017 00:00:00');
+    var t2 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_2').html(t2[0]+'天'+t2[1]+t2[2]+'小时'+t2[3]+t2[4]+'分'+t2[5]+t2[6]+'秒');
-    var t3 = getCountdown('5 26,2017 00:00:00');
+    var t3 = getCountdown('10 22,2017 00:00:00');
     $('#s3_time_3').html(t3[0]+'天'+t3[1]+t3[2]+'小时'+t3[3]+t3[4]+'分'+t3[5]+t3[6]+'秒');
-    var t4 = getCountdown('5 20,2017 00:00:00');
+    var t4 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_4').html(t4[0]+'天'+t4[1]+t4[2]+'小时'+t4[3]+t4[4]+'分'+t4[5]+t4[6]+'秒');
-    var t5 = getCountdown('5 22,2017 00:00:00');
+    var t5 = getCountdown('10 23,2017 00:00:00');
     $('#s3_time_5').html(t5[0]+'天'+t5[1]+t5[2]+'小时'+t5[3]+t5[4]+'分'+t5[5]+t5[6]+'秒');
-    var t6 = getCountdown('5 21,2017 00:00:00');
+    var t6 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_6').html(t6[0]+'天'+t6[1]+t6[2]+'小时'+t6[3]+t6[4]+'分'+t6[5]+t6[6]+'秒');
-    var t7 = getCountdown('5 24,2017 00:00:00');
+    var t7 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_7').html(t7[0]+'天'+t7[1]+t7[2]+'小时'+t7[3]+t7[4]+'分'+t7[5]+t7[6]+'秒');
-    var t8 = getCountdown('5 22,2017 00:00:00');
+    var t8 = getCountdown('10 22,2017 00:00:00');
     $('#s3_time_8').html(t8[0]+'天'+t8[1]+t8[2]+'小时'+t8[3]+t8[4]+'分'+t8[5]+t8[6]+'秒');
-    var t9 = getCountdown('5 21,2017 00:00:00');
+    var t9 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_9').html(t9[0]+'天'+t9[1]+t9[2]+'小时'+t9[3]+t9[4]+'分'+t9[5]+t9[6]+'秒');
-    var t10 = getCountdown('5 20,2017 00:00:00');
+    var t10 = getCountdown('10 21,2017 00:00:00');
     $('#s3_time_10').html(t10[0]+'天'+t10[1]+t10[2]+'小时'+t10[3]+t10[4]+'分'+t10[5]+t10[6]+'秒');
-    var t11 = getCountdown('5 22,2017 00:00:00');
+    var t11 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_11').html(t11[0]+'天'+t11[1]+t11[2]+'小时'+t11[3]+t11[4]+'分'+t11[5]+t11[6]+'秒');
-    var t12 = getCountdown('5 20,2017 00:00:00');
+    var t12 = getCountdown('10 20,2017 00:00:00');
     $('#s3_time_12').html(t12[0]+'天'+t12[1]+t12[2]+'小时'+t12[3]+t12[4]+'分'+t12[5]+t12[6]+'秒');
 },100);
 
