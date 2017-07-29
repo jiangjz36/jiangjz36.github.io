@@ -47,7 +47,12 @@ gulp.task('scripts', function () {
     .pipe(connect.reload());
 });
 
-gulp.task('watch', ['htmls', 'images', 'css', 'scripts'], function () {
+gulp.task('data', function () {
+  return gulp.src('src/data/*.json')
+    .pipe(gulp.dest('dist/data'));
+})
+
+gulp.task('watch', ['htmls', 'images', 'css', 'scripts', 'data'], function () {
   gulp.watch('src/*.html', ['htmls']);
   gulp.watch('src/img/*', ['images']);
   gulp.watch('src/css/*.css', ['css']);
