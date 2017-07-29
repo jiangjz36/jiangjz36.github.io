@@ -17,7 +17,7 @@ oLcSwitch.click(function() {
 
 // ajax显示商品列表
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://120.27.25.57/data/jd.json', true);
+xhr.open('GET', 'https://jiangjz36.github.io/dist/data/jd.json', true);
 xhr.send(null);
 xhr.onreadystatechange = function () {
 	if (xhr.readyState === 4 && xhr.status === 200) {
