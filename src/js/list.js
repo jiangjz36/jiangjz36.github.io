@@ -46,6 +46,8 @@ $.ajax({
                         '</div>';
             oDiv.innerHTML = oContent;
             oCartList.appendChild(oDiv);
+
+            
 		}
 		// 收藏 按钮
 		var oLcbCollection = $('.lcb_collection');
@@ -126,6 +128,7 @@ var allShopCount = 0;
 // 添加的商品的数组
 var shopCartArr = [];
 function fnAddShopCart(data) {
+	console.log(data);
     // 总数加1
     allShopCount++;
     // 商品种类（不计算每个商品的件数）
