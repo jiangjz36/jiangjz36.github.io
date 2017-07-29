@@ -16,35 +16,36 @@ oLcSwitch.click(function() {
 
 
 // ajax显示商品列表
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://jiangjz36.github.io/dist/data/jd.json', true);
-xhr.send(null);
-xhr.onreadystatechange = function () {
-	if (xhr.readyState === 4 && xhr.status === 200) {
-		var result = JSON.parse(xhr.responseText).value.wareList.wareList;
-		var oCartList = document.getElementById('l_cart_list');
+$.ajax({
+	type: 'get',
+	url: 'https://jiangjz36.github.io/dist/data/jd.json',
+	async: true,
+	success: function(data) {
+        result = data.value.wareList.wareList;
+        var oCartList = document.getElementById('l_cart_list');;
+
 		for(var i=0;i<result.length;i++) {
-		    var oDiv = document.createElement('div');
-		    oDiv.className = 'l_cl_sec';
+            var oDiv = document.createElement('div');
+            oDiv.className = 'l_cl_sec';
 			var oContent = '<a href="#"><img class="l_cls_img" src="'+result[i].imageurl+'" alt=""></a>'+
-		            	'<p class="l_cls_price">'+
-		                '<span class="lcp_price">￥'+result[i].jdPrice+'</span>'+
-		                    '<i class="icon_l_divide"></i>'+
-		                    '<span class="lcp_unit_price">单价：￥'+result[i].jdPrice+'</span>'+
-		                '</p>'+
-		                '<a href="#" class="l_cls_name">'+
-		                    '<span class="lcn_name">'+result[i].wname+'</span>'+
-		                '</a>'+
-		                '<div class="l_cls_btn">'+
-		                    '<a href="#" class="l_cb_sales">销量 '+result[i].cid1+'</a>'+
-		                    '<a href="#" class="l_cb_assess">评价 '+result[i].cid2+'</a>'+
-		                '</div>'+
-		                '<div class="l_cls_btn1">'+
-		                    '<button href="#" class="lcb_add_shop_cart" onclick="fnAddShopCart(result['+i+'])">加入购物车</button>'+
-		                    '<a href="#" class="lcb_collection"><i class="icon_collection"></i>收藏</a>'+
-		                '</div>';
-		    oDiv.innerHTML = oContent;
-		    oCartList.appendChild(oDiv);
+                    	'<p class="l_cls_price">'+
+                        '<span class="lcp_price">￥'+result[i].jdPrice+'</span>'+
+                            '<i class="icon_l_divide"></i>'+
+                            '<span class="lcp_unit_price">单价：￥'+result[i].jdPrice+'</span>'+
+                        '</p>'+
+                        '<a href="#" class="l_cls_name">'+
+                            '<span class="lcn_name">'+result[i].wname+'</span>'+
+                        '</a>'+
+                        '<div class="l_cls_btn">'+
+                            '<a href="#" class="l_cb_sales">销量 '+result[i].cid1+'</a>'+
+                            '<a href="#" class="l_cb_assess">评价 '+result[i].cid2+'</a>'+
+                        '</div>'+
+                        '<div class="l_cls_btn1">'+
+                            '<button href="#" class="lcb_add_shop_cart" onclick="fnAddShopCart(result['+i+'])">加入购物车</button>'+
+                            '<a href="#" class="lcb_collection"><i class="icon_collection"></i>收藏</a>'+
+                        '</div>';
+            oDiv.innerHTML = oContent;
+            oCartList.appendChild(oDiv);
 		}
 		// 收藏 按钮
 		var oLcbCollection = $('.lcb_collection');
@@ -54,41 +55,7 @@ xhr.onreadystatechange = function () {
 		var addShopCart = $('.lcb_add_shop_cart');
 		addShopCart.click(fnShopPopupBox);
 	}
-}
-
-// $.ajax({
-// 	type: 'get',
-// 	url: 'http://120.27.25.57/data/jd.json',
-// 	async: true,
-// 	success: function(data) {
-//         result = data.value.wareList.wareList;
-//         var oCartList = document.getElementById('l_cart_list');;
-
-// 		for(var i=0;i<result.length;i++) {
-//             var oDiv = document.createElement('div');
-//             oDiv.className = 'l_cl_sec';
-// 			var oContent = '<a href="#"><img class="l_cls_img" src="'+result[i].imageurl+'" alt=""></a>'+
-//                     	'<p class="l_cls_price">'+
-//                         '<span class="lcp_price">￥'+result[i].jdPrice+'</span>'+
-//                             '<i class="icon_l_divide"></i>'+
-//                             '<span class="lcp_unit_price">单价：￥'+result[i].jdPrice+'</span>'+
-//                         '</p>'+
-//                         '<a href="#" class="l_cls_name">'+
-//                             '<span class="lcn_name">'+result[i].wname+'</span>'+
-//                         '</a>'+
-//                         '<div class="l_cls_btn">'+
-//                             '<a href="#" class="l_cb_sales">销量 '+result[i].cid1+'</a>'+
-//                             '<a href="#" class="l_cb_assess">评价 '+result[i].cid2+'</a>'+
-//                         '</div>'+
-//                         '<div class="l_cls_btn1">'+
-//                             '<button href="#" class="lcb_add_shop_cart" onclick="fnAddShopCart(result['+i+'])">加入购物车</button>'+
-//                             '<a href="#" class="lcb_collection"><i class="icon_collection"></i>收藏</a>'+
-//                         '</div>';
-//             oDiv.innerHTML = oContent;
-//             oCartList.appendChild(oDiv);
-// 		}
-// 	}
-// });
+});
 
 
 // 商品筛选 按钮
